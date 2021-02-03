@@ -30,7 +30,12 @@ class _LoginState extends State<Login> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                TopBanner(height: 120.0, title: loginText, hasBackButton: false, onBackPressed: null,),
+                TopBanner(
+                  height: MediaQuery.of(context).size.height * 0.16,
+                  title: loginText,
+                  hasBackButton: false,
+                  onBackPressed: null,
+                ),
                 SizedBox(height: 30.0,),
                 Container(
                     margin: EdgeInsets.all(25.0),

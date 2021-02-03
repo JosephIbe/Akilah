@@ -1,12 +1,16 @@
-import 'package:akilah/presentation/journeys/main/settings/app_settings.dart';
 import 'package:flutter/material.dart';
+
+import 'package:akilah/presentation/journeys/main/course_details/course_overview.dart';
+import 'package:akilah/presentation/journeys/main/course_details/take_course.dart';
+import 'package:akilah/presentation/journeys/main/learn/topics.dart';
+import 'package:akilah/presentation/journeys/main/settings/app_settings.dart';
+import 'package:akilah/presentation/journeys/main/home.dart';
 
 import 'package:akilah/presentation/journeys/auth/forgot_password.dart';
 import 'package:akilah/presentation/journeys/auth/login.dart';
 import 'package:akilah/presentation/journeys/auth/register.dart';
 import 'package:akilah/presentation/journeys/auth/verify.dart';
 import 'package:akilah/presentation/journeys/auth/welcome.dart';
-import 'package:akilah/presentation/journeys/main/home.dart';
 import 'file:///E:/FlutterProjects/akilah/lib/presentation/journeys/main/profile/profile.dart';
 import 'file:///E:/FlutterProjects/akilah/lib/presentation/journeys/main/profile/profile_details.dart';
 import 'package:akilah/utils/strings.dart';
@@ -40,6 +44,15 @@ class AkilahRouter {
         break;
       case appSettingsRoute:
         return MaterialPageRoute(builder: (_) => AppSettings());
+        break;
+      case topicsRoute:
+        return MaterialPageRoute(builder: (_) => Topics());
+        break;
+      case courseOverviewRoute:
+        return MaterialPageRoute(builder: (_) => CourseOverview());
+        break;
+      case takeCourseRoute:
+        return MaterialPageRoute(builder: (_) => TakeCourse());
         break;
       // case splashRoute:
       //   return MaterialPageRoute(builder: (_)=> Splash());

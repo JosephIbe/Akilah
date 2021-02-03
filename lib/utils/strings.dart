@@ -12,6 +12,9 @@ const String homeRoute = '/home';
 const String profileRoute = '/my-profile';
 const String profileDetailsRoute = '/my-profile-view';
 const String appSettingsRoute = '/app-settings';
+const String topicsRoute = '/topics';
+const String courseOverviewRoute = '/course-overview';
+const String takeCourseRoute = '/take-course';
 
 
 

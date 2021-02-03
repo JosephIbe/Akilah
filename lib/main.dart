@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Login(),
-      // home: ProfileDetails(),
       onGenerateRoute: AkilahRouter.generateRoute,
     );
   }

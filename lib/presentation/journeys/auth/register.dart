@@ -37,7 +37,7 @@ class _RegisterState extends State<Register> {
             child: Column(
               children: [
                 TopBanner(
-                  height: 120.0,
+                  height: MediaQuery.of(context).size.height * 0.16,
                   title: registerText,
                   hasBackButton: true,
                   onBackPressed: ()=> Navigator.pop(context),

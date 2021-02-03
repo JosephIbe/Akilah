@@ -9,7 +9,7 @@ class HomeBanner extends StatelessWidget {
     return SafeArea(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-          height: 120.0,
+          height: MediaQuery.of(context).size.height * 0.17,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
               gradient: LinearGradient(

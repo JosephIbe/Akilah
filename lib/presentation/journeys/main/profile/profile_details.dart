@@ -104,22 +104,14 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                       isPassword: true,
                       suffixIcon: IconButton(
                         icon: Icon(Icons.edit),
-                        onPressed: ()=> showDialog(
-                          context: context,
-                          barrierDismissible: false,
-                          builder: (_)=> Container(
-                            height: 50.0,
-                            width: 200.0,
-                            color: Colors.red,
-                          )
-                        ),
+                        onPressed: ()=> handleChangePassword(context),
+                        // onPressed: (){},
                       ),
                     ),
                     SizedBox(height: 20.0,),
                     GestureDetector(
-                      onTap: ()=> handleLogOut,
+                      onTap: ()=> handleLogOut(context),
                       behavior: HitTestBehavior.translucent,
-                      // onTap: (){},
                       child: Container(
                         width: width,
                         height: 50.0,
@@ -167,10 +159,11 @@ class _ProfileDetailsState extends State<ProfileDetails> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(10.0))),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'Are You Sure You Want to Log Out?',
+                  'You Sure You Want to Log Out?',
                   style: GoogleFonts.openSans(
                       textStyle: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w600)
@@ -179,25 +172,31 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    RaisedButton(
-                      onPressed: () => Navigator.pop(context),
-                      color: Colors.grey,
-                      child: Text(
-                        'Cancel',
-                        style: GoogleFonts.openSans(
-                            textStyle: TextStyle(
-                                color: Colors.black, fontWeight: FontWeight.w600)
+                    Expanded(
+                      flex: 1,
+                      child: RaisedButton(
+                        onPressed: () => Navigator.pop(context),
+                        color: Colors.grey,
+                        child: Text(
+                          'Cancel',
+                          style: GoogleFonts.openSans(
+                              textStyle: TextStyle(
+                                  color: Colors.black, fontWeight: FontWeight.w600)
+                          ),
                         ),
                       ),
                     ),
-                    RaisedButton(
-                      onPressed: () => Navigator.pushReplacementNamed(context, loginRoute),
-                      color: Theme.of(context).primaryColor,
-                      child: Text(
-                        logOut,
-                        style: GoogleFonts.openSans(
-                            textStyle: TextStyle(
-                                color: Colors.white, fontWeight: FontWeight.w600)
+                    Expanded(
+                      flex: 1,
+                      child: RaisedButton(
+                        onPressed: () => Navigator.pushReplacementNamed(context, loginRoute),
+                        color: Theme.of(context).primaryColor,
+                        child: Text(
+                          logOut,
+                          style: GoogleFonts.openSans(
+                              textStyle: TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.w600)
+                          ),
                         ),
                       ),
                     ),
@@ -208,6 +207,19 @@ class _ProfileDetailsState extends State<ProfileDetails> {
           ),
         );
       }
+    );
+  }
+
+  handleChangePassword(BuildContext context) {
+    print('show edit pwd dialog');
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (_)=> Container(
+          height: 50.0,
+          width: 200.0,
+          color: Colors.red,
+        )
     );
   }
 
@@ -225,4 +237,5 @@ class _ProfileDetailsState extends State<ProfileDetails> {
       ),
     );
   }
+
 }

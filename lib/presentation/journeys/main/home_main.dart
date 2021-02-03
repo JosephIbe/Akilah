@@ -1,5 +1,5 @@
 import 'package:akilah/presentation/widgets/home_banner.dart';
-import 'package:akilah/presentation/widgets/popular_course_card.dart';
+import 'package:akilah/presentation/widgets/popular_courses_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

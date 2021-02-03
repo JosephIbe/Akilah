@@ -1,5 +1,4 @@
 import 'package:akilah/presentation/journeys/main/profile/courses_profile.dart';
-import 'package:akilah/utils/strings.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {

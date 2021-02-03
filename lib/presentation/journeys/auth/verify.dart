@@ -29,7 +29,7 @@ class _VerifyOTPState extends State<VerifyOTP> {
             child: Column(
               children: [
                 TopBanner(
-                  height: 145.0,
+                  height: MediaQuery.of(context).size.height * 0.19,
                   title: enter6DigitCode,
                   hasBackButton: true,
                   onBackPressed: ()=> Navigator.pop(context),

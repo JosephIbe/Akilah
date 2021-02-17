@@ -41,7 +41,7 @@ var kCTAButtonTextStyle = GoogleFonts.poppins(
 var kAuthOptionsTextStyle = GoogleFonts.lato(
     textStyle: TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: 15.0,
+        fontSize: 18.0,
         color: Color(0xff7981db)
     )
 );
@@ -181,6 +181,46 @@ var kTakeCourseNumVideosTextStyle = GoogleFonts.lato(
       fontWeight: FontWeight.bold,
       color: Colors.blueAccent,
     )
+);
+
+var kTakeCourseOverviewTextStyle = GoogleFonts.lato(
+  textStyle: TextStyle(
+    fontSize: 17.0,
+    fontWeight: FontWeight.w500,
+    color: Colors.grey
+  )
+);
+
+var kTakeCourseOverviewHeaderTextStyle = GoogleFonts.lato(
+    textStyle: TextStyle(
+        fontSize: 17.0,
+        fontWeight: FontWeight.w800,
+        color: Colors.blueGrey
+    )
+);
+
+var kWhatYouWillGetRowTextStyle = GoogleFonts.lato(
+  textStyle: TextStyle(
+    fontSize: 15.0,
+    fontWeight: FontWeight.w500,
+    color: Colors.red
+  )
+);
+
+var kWatchCourseTitleTextStyle = GoogleFonts.poppins(
+    textStyle: TextStyle(
+        fontSize: 18.0,
+        fontWeight: FontWeight.w700,
+        color: Colors.red
+    )
+);
+
+var kWatchCourseAuthorTextStyle = GoogleFonts.poppins(
+  textStyle: TextStyle(
+      fontSize: 15.0,
+      fontWeight: FontWeight.w500,
+      color: Colors.blueGrey
+  )
 );
 
 /**

@@ -11,7 +11,7 @@ class OTPInput extends StatelessWidget {
       height: 50.0,
       width: 50.0,
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.blueGrey,
           shape: BoxShape.circle
       ),
       child: Center(
@@ -22,6 +22,7 @@ class OTPInput extends StatelessWidget {
           autofocus: false,
           textInputAction: TextInputAction.next,
           keyboardType: TextInputType.number,
+          style: TextStyle(color: Colors.white),
           decoration: InputDecoration(
               counterText: '',
               border: InputBorder.none

@@ -12,6 +12,7 @@ class CourseOverview extends StatefulWidget {
 class _CourseOverviewState extends State<CourseOverview> {
   @override
   Widget build(BuildContext context) {
+
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 

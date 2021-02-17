@@ -59,7 +59,10 @@ class _VerifyOTPState extends State<VerifyOTP> {
                         ),
                         SizedBox(height: 25.0,),
                         GestureDetector(
-                          onTap: ()=> Navigator.pushReplacementNamed(context, homeRoute),
+                          // onTap: ()=> Navigator.popAndPushNamed(context, homeRoute),
+                          onTap: ()=> Navigator.pushNamedAndRemoveUntil(
+                            context, homeRoute, (Route<dynamic> route) => false
+                          ),
                           child: Text(
                             'Skip To Home Page',
                             style: kVerificationCodePromptTextStyle,

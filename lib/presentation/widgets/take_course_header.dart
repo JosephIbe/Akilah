@@ -1,7 +1,8 @@
-import 'package:akilah/utils/strings.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter/src/rendering/sliver_persistent_header.dart';
 import 'package:akilah/utils/constants.dart';
+import 'package:akilah/utils/strings.dart';
 
 class TakeCourseHeader implements SliverPersistentHeaderDelegate {
   final double minExtent;
@@ -10,10 +11,12 @@ class TakeCourseHeader implements SliverPersistentHeaderDelegate {
   TakeCourseHeader({this.minExtent, this.maxExtent});
 
   @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-
-    double width = MediaQuery.of(context).size.width;
+  Widget build(BuildContext context, double shrinkOffset,
+      bool overlapsContent) {
+    double width = MediaQuery
+        .of(context)
+        .size
+        .width;
 
     return ClipRRect(
       borderRadius: BorderRadius.only(
@@ -36,10 +39,13 @@ class TakeCourseHeader implements SliverPersistentHeaderDelegate {
               child: IconButton(
                 icon: Icon(
                   Icons.chevron_left,
-                  color: Theme.of(context).primaryColor,
+                  color: Theme
+                      .of(context)
+                      .primaryColor,
                   size: 45.0,
                 ),
-                onPressed: () => Navigator.pushReplacementNamed(context, homeRoute),
+                onPressed: () =>
+                    Navigator.pushReplacementNamed(context, homeRoute),
               ),
             ),
           ),
@@ -54,16 +60,20 @@ class TakeCourseHeader implements SliverPersistentHeaderDelegate {
                 children: [
                   Row(
                     children: [
-                      Text('Gordon Ramsay', style: kCourseDetailsInstructorNameTextStyle,),
+                      Text('Gordon Ramsay',
+                        style: kCourseDetailsInstructorNameTextStyle,),
                       SizedBox(width: 30.0,),
                       Container(
                         width: width * 0.22,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Theme.of(context).primaryColor, width: 1.0),
+                          border: Border.all(color: Theme
+                              .of(context)
+                              .primaryColor, width: 1.0),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 3.5),
-                          child: Text('Purchased', style: kPurchaseStatusTextStyle,),
+                          child: Text(
+                            'Purchased', style: kPurchaseStatusTextStyle,),
                         ),
                       )
                     ],
@@ -81,48 +91,59 @@ class TakeCourseHeader implements SliverPersistentHeaderDelegate {
                     ],
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ConstrainedBox(
-                        child: Text('Teaches cooking II: Restaurant recipes at home', style: kTakeCourseDescTextStyle,),
-                        constraints: BoxConstraints(
-                          maxWidth: width * 0.7
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ConstrainedBox(
+                          child: Text(
+                            'Teaches cooking II: Restaurant recipes at home',
+                            style: kTakeCourseDescTextStyle,),
+                          constraints: BoxConstraints(
+                              maxWidth: width * 0.7
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(8.0, 4.0, 0.0, 0.0),
-                        child: IconButton(
-                          icon: Icon(Icons.bookmark_border_outlined, color: Colors.white, size: 30.0,),
-                          onPressed: (){},
-                        ),
-                      )
-                    ]
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(
+                              8.0, 4.0, 0.0, 0.0),
+                          child: IconButton(
+                            icon: Icon(
+                              Icons.bookmark_border_outlined, color: Colors
+                                .white, size: 30.0,),
+                            onPressed: () {},
+                          ),
+                        )
+                      ]
                   ),
                   ButtonTheme(
                     minWidth: width,
                     height: 50.0,
                     child: RaisedButton(
-                      onPressed: ()=> {},
+                      onPressed: () => Navigator.pushNamed(context, watchCourseRoute),
                       elevation: 2.0,
-                      color: Theme.of(context).primaryColor,
+                      color: Theme
+                          .of(context)
+                          .primaryColor,
                       padding: EdgeInsets.all(4.0),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-                      child: Text('Watch This Course', style: kPurchasePlanButtonTextStyle,),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0)),
+                      child: Text('Watch This Course',
+                        style: kPurchasePlanButtonTextStyle,),
                     ),
                   ),
-                  SizedBox(height: 10.0,),
-                  ButtonTheme(
-                    minWidth: width,
-                    height: 50.0,
-                    child: RaisedButton(
-                      onPressed: ()=> {},
-                      elevation: 2.0,
-                      color: Colors.lightBlueAccent[100],
-                      padding: EdgeInsets.all(4.0),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-                      child: Text('Watch Trailer', style: kPurchasePlanButtonTextStyle,),
-                    ),
-                  )
+                  // SizedBox(height: 10.0,),
+                  // ButtonTheme(
+                  //   minWidth: width,
+                  //   height: 50.0,
+                  //   child: RaisedButton(
+                  //     onPressed: (){},
+                  //     elevation: 2.0,
+                  //     color: Colors.lightBlueAccent[100],
+                  //     padding: EdgeInsets.all(4.0),
+                  //     shape: RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(5.0)),
+                  //     child: Text(
+                  //       'Watch Trailer', style: kPurchasePlanButtonTextStyle,),
+                  //   ),
+                  // )
                 ],
               ),
             ),

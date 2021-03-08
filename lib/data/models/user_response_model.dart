@@ -29,7 +29,7 @@ class UserResponseModel {
   Map<String, dynamic> toJSON() => {
     "success": success,
     "message": message,
-    "user": user.toJson(),
+    "user": user.toJSON(),
     "accessToken": accessToken,
     "refreshToken": refreshToken,
   };

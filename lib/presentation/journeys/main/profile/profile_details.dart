@@ -41,13 +41,11 @@ class _ProfileDetailsState extends State<ProfileDetails> {
             children: [
               TopBanner(
                 title: actSettings,
-                height: 120.0,
+                height: height * 0.17,
                 hasBackButton: true,
                 onBackPressed: () => Navigator.pop(context),
               ),
-              SizedBox(
-                height: 30.0,
-              ),
+              SizedBox(height: 30.0,),
               Align(
                 alignment: Alignment.center,
                 child: Column(
@@ -141,7 +139,6 @@ class _ProfileDetailsState extends State<ProfileDetails> {
   }
 
   handleLogOut(BuildContext context) {
-    print('to show dialog');
     showLogOutDialog(context);
   }
 
@@ -189,7 +186,10 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                     Expanded(
                       flex: 1,
                       child: RaisedButton(
-                        onPressed: () => Navigator.pushReplacementNamed(context, loginRoute),
+                        onPressed: () =>
+                            // print('Will Logout'),
+                            Navigator.pushNamedAndRemoveUntil
+                              (context, loginRoute, (Route<dynamic> route) => false),
                         color: Theme.of(context).primaryColor,
                         child: Text(
                           logOut,

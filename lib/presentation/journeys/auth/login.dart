@@ -1,6 +1,7 @@
 import 'package:akilah/domain/repositories/user_repository.dart';
 import 'package:akilah/presentation/blocs/authentication/auth.dart';
 import 'package:akilah/presentation/blocs/login/login.dart';
+import 'package:akilah/presentation/journeys/main/home.dart';
 import 'package:akilah/presentation/widgets/CTAButton.dart';
 import 'package:akilah/presentation/widgets/akilah_text_field.dart';
 import 'package:akilah/presentation/widgets/top_banner.dart';
@@ -16,9 +17,17 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
           child: BlocBuilder<AuthenticationBloc, AuthenticationState>(
             builder: (context, state) {
+
               final authBloc = BlocProvider.of<AuthenticationBloc>(context);
+
+              print(state);
+
+              if(state is AuthenticationStateAuthenticated) {
+                return Home();
+              }
+
               if (state is AuthenticationStateUnAuthenticated) {
-                return _AuthForm();
+                return _LoginForm();
               }
               if (state is AuthenticationStateFailure) {
                 return Center(
@@ -38,18 +47,19 @@ class LoginPage extends StatelessWidget {
                     ));
               }
               // return splash screen
-              return Center(
-                child: CircularProgressIndicator(
-                  strokeWidth: 2,
-                ),
-              );
+              // return Center(
+              //   child: CircularProgressIndicator(
+              //     strokeWidth: 2,
+              //   ),
+              // );
+              return _LoginForm();
             },
           )),
     );
   }
 }
 
-class _AuthForm extends StatelessWidget {
+class _LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
@@ -96,85 +106,26 @@ class __SignInFormState extends State<_SignInForm> {
         "password": passwordController.text
       };
 
-      if (_formKey.currentState.validate()) {
-        _loginBloc.add(LoginWithEmail(body: body));
-        print('Login state is $state');
-      } else {
-        setState(() {
-          _autoValidate = true;
-        });
-      }
+      _loginBloc.add(LoginWithEmail(body: body));
+      print('Login state is $state');
+
     }
 
     return BlocListener<LoginBloc, LoginState>(
       listener: (context, state) {
+        print('LoginState Listened is:\t$state');
         if (state is LoginStateFailure) {
           _showError(state.errorMessage);
         }
       },
       child: BlocBuilder<LoginBloc, LoginState>(
         builder: (context, state) {
+          print('LoginState Building is:\t$state');
           if (state is LoginStateLoading) {
             return Center(
               child: CircularProgressIndicator(),
             );
           }
-          // return Form(
-          //   key: _key,
-          //   autovalidateMode: _autoValidate ? AutovalidateMode.always : AutovalidateMode.disabled,
-          //   child: SingleChildScrollView(
-          //     child: Column(
-          //       crossAxisAlignment: CrossAxisAlignment.stretch,
-          //       children: <Widget>[
-          //         TextFormField(
-          //           decoration: InputDecoration(
-          //             labelText: 'Email address',
-          //             filled: true,
-          //             isDense: true,
-          //           ),
-          //           controller: _emailController,
-          //           keyboardType: TextInputType.emailAddress,
-          //           autocorrect: false,
-          //           validator: (value) {
-          //             if (value == null) {
-          //               return 'Email is required.';
-          //             }
-          //             return null;
-          //           },
-          //         ),
-          //         SizedBox(
-          //           height: 12,
-          //         ),
-          //         TextFormField(
-          //           decoration: InputDecoration(
-          //             labelText: 'Password',
-          //             filled: true,
-          //             isDense: true,
-          //           ),
-          //           obscureText: true,
-          //           controller: _passwordController,
-          //           validator: (value) {
-          //             if (value == null) {
-          //               return 'Password is required.';
-          //             }
-          //             return null;
-          //           },
-          //         ),
-          //         const SizedBox(
-          //           height: 16,
-          //         ),
-          //         RaisedButton(
-          //           color: Theme.of(context).primaryColor,
-          //           textColor: Colors.white,
-          //           padding: const EdgeInsets.all(16),
-          //           shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(8.0)),
-          //           child: Text('LOG IN'),
-          //           onPressed: state is LoginStateLoading ? () {} : _onLoginButtonPressed,
-          //         )
-          //       ],
-          //     ),
-          //   ),
-          // );
           return Container(
             width: width,
             height: height,
@@ -259,6 +210,7 @@ class __SignInFormState extends State<_SignInForm> {
 
   @override
   void dispose() {
+    super.dispose();
     emailController.dispose();
     passwordController.dispose();
   }

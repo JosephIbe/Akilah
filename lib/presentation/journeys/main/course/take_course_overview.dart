@@ -21,6 +21,8 @@ class _TakeCourseOverviewState extends State<TakeCourseOverview> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
+            Text('About this Course', style: kTakeCourseOverviewHeaderTextStyle),
+            SizedBox(height: 10.0,),
             Text('\"Cooking at home\" is the new going out', style: kTakeCourseOverviewHeaderTextStyle),
             SizedBox(height: 10.0,),
             Text(takeCourseOverviewText, style: kTakeCourseOverviewTextStyle,),
@@ -29,14 +31,17 @@ class _TakeCourseOverviewState extends State<TakeCourseOverview> {
             Text('Requirements', style: kTakeCourseOverviewHeaderTextStyle),
             Container(
               height: 100.0,
-              child: ListView.builder(
-                itemCount: 4,
-                shrinkWrap: true,
-                itemBuilder: (context, index) => Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4.0, vertical: 4.0),
-                  child: Text('Requirement $index', style: kWhatYouWillGetRowTextStyle,),
-                ),
-              ),
+              child: Wrap(
+                alignment: WrapAlignment.spaceEvenly,
+                spacing: 10.0,
+                children: [
+                  Chip(label: Text('Oil'), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),),
+                  Chip(label: Text('Skillet'), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),),
+                  Chip(label: Text('Requirements one'), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),),
+                  Chip(label: Text('Requirements two'), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),),
+                  Chip(label: Text('Requirements three'), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),),
+                ],
+              )
             ),
             Divider(),
             Text('What you will get', style: kTakeCourseOverviewHeaderTextStyle),
@@ -68,35 +73,37 @@ class _TakeCourseOverviewState extends State<TakeCourseOverview> {
             ),
             Text('What you will learn', style: kTakeCourseOverviewHeaderTextStyle),
             Container(
-              height: 200.0,
+              height: 150.0,
               child: ListView.builder(
                 itemCount: 7,
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index){
-                  return Container(
-                    height: 150.0,
-                    width: 150.0,
-                    margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                      color: Colors.blueGrey
-                    ),
-                    child: Stack(
-                      children: [
-                        CachedNetworkImage(
-                          imageUrl: 'https://picsum.photos/200',
-                          placeholder: (context, url) => Center(child: CircularProgressIndicator(),),
-                          errorWidget: (context, url, error) => Center(child: Icon(Icons.error)),
-                          fit: BoxFit.cover,
-                        ),
-                        Positioned(
-                          bottom: 10.0,
-                          left: 10.0,
-                          right: 10.0,
-                          child: Text('Photoshop 101', style: kWhatYouWillGetRowTextStyle,)
-                        )
-                      ],
+                  return ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    child: Container(
+                      height: 150.0,
+                      width: 150.0,
+                      margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.blueGrey
+                      ),
+                      child: Stack(
+                        children: [
+                          CachedNetworkImage(
+                            imageUrl: 'https://picsum.photos/200',
+                            placeholder: (context, url) => Center(child: CircularProgressIndicator(),),
+                            errorWidget: (context, url, error) => Center(child: Icon(Icons.error)),
+                            fit: BoxFit.cover,
+                          ),
+                          Positioned(
+                            bottom: 10.0,
+                            left: 10.0,
+                            right: 10.0,
+                            child: Text('Photoshop 101', style: kWhatYouWillGetRowTextStyle,)
+                          )
+                        ],
+                      ),
                     ),
                   );
                 },

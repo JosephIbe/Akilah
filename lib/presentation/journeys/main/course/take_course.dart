@@ -43,44 +43,6 @@ class _TakeCourseState extends State<TakeCourse> with SingleTickerProviderStateM
                   ),
                 ],
               ),
-              // child: Column(
-              //   children: [
-              // Container(
-              //       height: 40.0,
-              //       margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
-              //       width: MediaQuery.of(context).size.width,
-              //       constraints: BoxConstraints(minWidth: 170.0),
-              //       decoration: BoxDecoration(
-              //         color: Colors.transparent,
-              //         borderRadius: BorderRadius.circular(
-              //           20.0,
-              //         ),
-              //       ),
-              //       child: TabBar(
-              //         controller: _tabController,
-              //         labelColor: Colors.black,
-              //         unselectedLabelColor: Colors.grey,
-              //         indicator: BoxDecoration(
-              //           color: Colors.transparent,
-              //         ),
-              //         tabs: [
-              //           Tab(text: 'Overview',),
-              //           Tab(text: 'Lessons',),
-              //         ],
-              //       ),
-              //     ),
-                  // Expanded(
-                  //   child: TabBarView(
-                  //     controller: _tabController,
-                  //     children: [
-                  //       TakeCourseOverview(),
-                  //       TakeCourseOverview(),
-                  //       // DummyWidget(),
-                  //     ],
-                  //   ),
-                  // ),
-                // ],
-              // ),
             )
           ],
         ),

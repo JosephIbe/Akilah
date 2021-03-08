@@ -17,14 +17,14 @@ class UserRemoteDataSourceImpl implements UserRemoteDataSource {
 
   @override
   Future<UserModel> loginUser(Map<String, dynamic> body) async {
-    final resultsResponse = await client.post('login', body);
-    final user = UserModel.fromJSON(resultsResponse);
+    final response = await client.postAuthData('login', body);
+    final user = UserModel.fromJSON(response);
     return user;
   }
 
   @override
   Future<UserModel> registerUser(Map<String, dynamic> body) async {
-    final response = await client.post('register', body);
+    final response = await client.postAuthData('register', body);
     final user = UserModel.fromJSON(response);
     return user;
   }

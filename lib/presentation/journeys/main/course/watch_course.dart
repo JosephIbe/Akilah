@@ -173,35 +173,44 @@ class _WatchCourseState extends State<WatchCourse> {
   }
 
   Widget playListItem({int index}){
-    return Container(
-      height: height * 0.13,
-      width: width,
-      margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-      child: Row(
-        children: [
-          Expanded(
-            flex: 1,
-            child: CachedNetworkImage(
-              imageUrl: 'https://picsum.photos/200',
-              fit: BoxFit.cover,
-              placeholder: (context, url) => Center(child: CircularProgressIndicator(),),
-              errorWidget: (context, url, error) => Center(child: Icon(Icons.error, color: Colors.red,)),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Text('$index. Kitchen and Food Safety Lesson Plan'),
-                  SizedBox(height: 5.0,),
-                  Text('The basic terms used when cooking')
-                ],
+    return Card(
+      elevation: 2.0,
+      child: Container(
+        height: height * 0.13,
+        width: width,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+        child: Row(
+          children: [
+            Expanded(
+              flex: 1,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15.0),
+                child: CachedNetworkImage(
+                  imageUrl: 'https://picsum.photos/200',
+                  fit: BoxFit.cover,
+                  placeholder: (context, url) => Center(child: CircularProgressIndicator(),),
+                  errorWidget: (context, url, error) => Center(child: Icon(Icons.error, color: Colors.red,)),
+                ),
               ),
             ),
-          ),
-        ],
+            Expanded(
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    Text('$index. Kitchen and Food Safety Lesson Plan'),
+                    SizedBox(height: 5.0,),
+                    Text('The basic terms used when cooking')
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

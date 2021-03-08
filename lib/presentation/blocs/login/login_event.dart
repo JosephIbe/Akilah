@@ -1,5 +1,3 @@
-// part of 'login_bloc.dart';
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +10,6 @@ abstract class LoginEvent extends Equatable{
 class LoginWithEmail extends LoginEvent {
 
   final Map<String, dynamic> body;
-  // final String password;
 
   LoginWithEmail({@required this.body, });
 

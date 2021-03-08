@@ -32,15 +32,14 @@ class _AkilahVideoPlayerState extends State<AkilahVideoPlayer> {
     _controller = BetterPlayerController(
         BetterPlayerConfiguration(
           fit: BoxFit.cover,
-          aspectRatio: 4.5/3,
+          aspectRatio: 4/3,
           autoPlay: false,
           showPlaceholderUntilPlay: true,
           controlsConfiguration: BetterPlayerControlsConfiguration(
               enableMute: true,
               enableOverflowMenu: true,
-              overflowMenuIcon: IconData(0xe146, fontFamily: 'MaterialIcons',),
+              overflowMenuIcon: const IconData(0xe146, fontFamily: 'MaterialIcons',),
               showControlsOnInitialize: false,
-              // showControls: false,
               playerTheme: BetterPlayerTheme.material,
             enableProgressText: true
           ),
@@ -54,14 +53,12 @@ class _AkilahVideoPlayerState extends State<AkilahVideoPlayer> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      body: AspectRatio(
-        aspectRatio: 4.5/3,
-        child: BetterPlayer(
-          key: _playerKey,
-          controller: _controller,
-        ),
-      )
+      body: BetterPlayer(
+        key: _playerKey,
+        controller: _controller,
+      ),
     );
   }
 

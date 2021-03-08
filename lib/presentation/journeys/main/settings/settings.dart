@@ -25,7 +25,7 @@ class _SettingsState extends State<Settings> {
             children: [
               TopBanner(
                 title: settings,
-                height: 120.0,
+                height: height * 0.17,
                 hasBackButton: false,
                 onBackPressed: null,
               ),

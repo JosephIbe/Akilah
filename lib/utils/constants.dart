@@ -17,7 +17,7 @@ var kWelcomeTextStyle = GoogleFonts.openSans(
 var kBannerTextStyle = GoogleFonts.lato(
     textStyle: TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: 26.0,
+        fontSize: 25.0,
         color: Colors.black
     )
 );
@@ -89,9 +89,9 @@ var kCoursePriceTextStyle = GoogleFonts.poppins(
 
 var kCourseDescTextStyle = GoogleFonts.poppins(
     textStyle: TextStyle(
-      fontSize: 14.0,
+      fontSize: 10.0,
       fontWeight: FontWeight.w500,
-      color: Colors.blueGrey,
+      color: Colors.white70,
     )
 );
 

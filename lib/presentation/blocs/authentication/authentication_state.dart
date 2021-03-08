@@ -16,6 +16,16 @@ class AuthenticationStateLoading extends AuthenticationState {}
 
 class AuthenticationStateUnAuthenticated extends AuthenticationState {}
 
+class AuthenticationStateGetOTP extends AuthenticationState {
+
+  final int phone;
+  AuthenticationStateGetOTP({@required this.phone});
+
+  @override
+  List<Object> get props => [phone];
+
+}
+
 class AuthenticationStateAuthenticated extends AuthenticationState {
 
   final UserModel user;

@@ -13,9 +13,6 @@ class AuthenticationBloc
         super(AuthenticationStateInitial());
 
   @override
-  AuthenticationState get initialState => AuthenticationStateInitial();
-
-  @override
   Stream<AuthenticationState> mapEventToState(
       AuthenticationEvent event) async* {
 
@@ -47,7 +44,8 @@ class AuthenticationBloc
         yield AuthenticationStateUnAuthenticated();
       }
     }catch(err){
-      yield AuthenticationStateFailure(errorMessage: err.message ?? 'An Unknown Has Error Occurred');
+      // yield AuthenticationStateFailure(errorMessage: err.message ?? 'Error Completing Your Request, Try Again!');
+      yield AuthenticationStateFailure(errorMessage: 'Error Completing Your Request, Try Again!');
     }
   }
 

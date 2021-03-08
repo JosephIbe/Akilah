@@ -1,6 +1,5 @@
 import 'package:akilah/presentation/journeys/auth/forgot_password.dart';
 import 'package:akilah/presentation/journeys/auth/login.dart';
-import 'package:akilah/presentation/journeys/auth/login_no_bloc.dart';
 import 'package:akilah/presentation/journeys/auth/register.dart';
 import 'package:akilah/presentation/journeys/auth/verify.dart';
 import 'package:akilah/presentation/journeys/auth/welcome.dart';
@@ -23,15 +22,16 @@ class AkilahRouter {
         break;
       case loginRoute:
         return MaterialPageRoute(builder: (_) =>
-            LoginNoBloc());
+            LoginPage());
         break;
       case registerRoute:
-        return MaterialPageRoute(builder: (_) => Register());
+        // return MaterialPageRoute(builder: (_) => RegisterNoBloc());
+        return MaterialPageRoute(builder: (_) => RegisterPage());
         break;
       case forgotPasswordRoute:
         return MaterialPageRoute(builder: (_) => ForgotPassword());
         break;
-      case verifyRoute:
+      case verifyOTPRoute:
         return MaterialPageRoute(builder: (_) => VerifyOTP());
         break;
       case homeRoute:

@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:akilah/domain/repositories/user_repository.dart';
 import 'package:akilah/presentation/blocs/authentication/auth.dart';
@@ -41,7 +40,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     //   yield LoginStateFailure(errorMessage: e.message);
     } catch (err){
       print(err);
-      yield LoginStateFailure(errorMessage: 'An Unknown Has Error Occurred');
+      yield LoginStateFailure(errorMessage: 'Error Completing Your Request, Try Again!');
     }
   }
 

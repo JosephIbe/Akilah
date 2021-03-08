@@ -1,6 +1,25 @@
-part of 'register_bloc.dart';
+
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
 @immutable
-abstract class RegisterState {}
+abstract class RegisterState extends Equatable {
+  @override
+  List<Object> get props => [];
+}
 
-class InitialRegisterState extends RegisterState {}
+class RegisterStateInitial extends RegisterState {}
+
+class RegisterStateLoading extends RegisterState {}
+
+class RegisterStateSuccess extends RegisterState {}
+
+class RegisterStateFailure extends RegisterState {
+
+  final String errorMessage;
+  RegisterStateFailure({@required this.errorMessage});
+
+  @override
+  List<Object> get props => [errorMessage];
+
+}

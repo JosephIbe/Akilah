@@ -28,14 +28,14 @@ packages:
       name: better_player
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.52"
+    version: "0.0.57"
   bloc:
     dependency: "direct main"
     description:
       name: bloc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.1.1"
+    version: "6.1.3"
   boolean_selector:
     dependency: transitive
     description:
@@ -159,7 +159,7 @@ packages:
       name: flutter_bloc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.1.2"
+    version: "6.1.3"
   flutter_blurhash:
     dependency: transitive
     description:
@@ -173,19 +173,7 @@ packages:
       name: flutter_cache_manager
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0"
-  flutter_driver:
-    dependency: "direct main"
-    description: flutter
-    source: sdk
-    version: "0.0.0"
-  flutter_hls_parser:
-    dependency: transitive
-    description:
-      name: flutter_hls_parser
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.0"
+    version: "2.1.1"
   flutter_page_indicator:
     dependency: transitive
     description:
@@ -193,13 +181,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.3"
-  flutter_svg:
+  flutter_paystack:
     dependency: "direct main"
     description:
-      name: flutter_svg
+      name: flutter_paystack
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.18.1"
+    version: "1.0.4+1"
   flutter_swiper:
     dependency: "direct main"
     description:
@@ -208,7 +196,7 @@ packages:
     source: hosted
     version: "1.1.6"
   flutter_test:
-    dependency: "direct main"
+    dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -223,12 +211,7 @@ packages:
       name: flutter_widget_from_html_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.1+4"
-  fuchsia_remote_debug_protocol:
-    dependency: transitive
-    description: flutter
-    source: sdk
-    version: "0.0.0"
+    version: "0.5.2"
   get_it:
     dependency: "direct main"
     description:
@@ -242,7 +225,7 @@ packages:
       name: google_fonts
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.1"
+    version: "1.1.2"
   html:
     dependency: transitive
     description:
@@ -251,7 +234,7 @@ packages:
     source: hosted
     version: "0.14.0+4"
   http:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: http
       url: "https://pub.dartlang.org"
@@ -278,13 +261,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
-  integration_test:
-    dependency: "direct main"
+  intl:
+    dependency: transitive
     description:
-      name: integration_test
+      name: intl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.1"
+    version: "0.16.1"
   js:
     dependency: transitive
     description:
@@ -292,13 +275,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.2"
-  json_rpc_2:
-    dependency: transitive
-    description:
-      name: json_rpc_2
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.2.2"
   matcher:
     dependency: transitive
     description:
@@ -334,20 +310,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0-nullsafety.1"
-  path_drawing:
-    dependency: transitive
-    description:
-      name: path_drawing
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.4.1+1"
-  path_parsing:
-    dependency: transitive
-    description:
-      name: path_parsing
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.4"
   path_provider:
     dependency: transitive
     description:
@@ -425,20 +387,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.3.3"
-  pub_semver:
-    dependency: transitive
-    description:
-      name: pub_semver
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.4.4"
-  quiver:
-    dependency: transitive
-    description:
-      name: quiver
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.5"
   rxdart:
     dependency: transitive
     description:
@@ -464,7 +412,7 @@ packages:
       name: sqflite
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.3.1+2"
+    version: "1.3.2+3"
   sqflite_common:
     dependency: transitive
     description:
@@ -493,13 +441,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0-nullsafety.1"
-  sync_http:
-    dependency: transitive
-    description:
-      name: sync_http
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.0"
   synchronized:
     dependency: transitive
     description:
@@ -556,20 +497,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.5"
-  vm_service:
-    dependency: transitive
-    description:
-      name: vm_service
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "5.5.0"
-  vm_service_client:
-    dependency: transitive
-    description:
-      name: vm_service_client
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.6+2"
   wakelock:
     dependency: transitive
     description:
@@ -591,27 +518,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.0+3"
-  web_socket_channel:
-    dependency: transitive
-    description:
-      name: web_socket_channel
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.0"
-  webdriver:
-    dependency: transitive
-    description:
-      name: webdriver
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.2"
   win32:
     dependency: transitive
     description:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.4"
+    version: "1.7.4+1"
   xdg_directories:
     dependency: transitive
     description:
@@ -627,5 +540,5 @@ packages:
     source: hosted
     version: "4.5.1"
 sdks:
-  dart: ">=2.10.0 <2.11.0"
-  flutter: ">=1.20.0 <2.0.0"
+  dart: ">=2.10.2 <2.11.0"
+  flutter: ">=1.22.2 <2.0.0"

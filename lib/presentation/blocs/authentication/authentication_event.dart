@@ -40,4 +40,13 @@ class UserLoggedIn extends AuthenticationEvent {
   List<Object> get props => [user];
 }
 
+class UserRequestsOTP extends AuthenticationEvent {
+  final int phone;
+  UserRequestsOTP({@required this.phone});
+
+  @override
+  List<Object> get props => [phone];
+
+}
+
 class UserLoggedOut extends AuthenticationEvent {}

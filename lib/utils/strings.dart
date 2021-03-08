@@ -5,7 +5,7 @@
 const String splashRoute = '/';
 const String welcomeRoute = '/welcome';
 const String loginRoute = '/login';
-const String verifyRoute = '/verify-otp';
+const String verifyOTPRoute = '/verify-otp';
 const String registerRoute = '/register';
 const String forgotPasswordRoute = '/forgot-password';
 const String homeRoute = '/home';

@@ -57,31 +57,3 @@ class UserModel {
   }
 
 }
-
-// class UserModel {
-//   final String id;
-//   final String username;
-//   final String email;
-//   final String phone;
-//
-//   UserModel({this.id, this.username, this.email, this.phone});
-//
-//   factory UserModel.fromJSON(Map<String, dynamic> json) {
-//     // final user = json['user'];
-//     print(json);
-//     return UserModel(
-//       id: json["_id"],
-//       username: json["username"],
-//       email: json["email"],
-//       phone: json["phone"],
-//     );
-//   }
-//
-//   Map<String, dynamic> toJson() => {
-//     "_id": id,
-//     "username": username,
-//     "email": email,
-//     "phone": phone,
-//   };
-//
-// }

@@ -28,9 +28,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   Stream<LoginState> _mapLoginWithEmailToState(LoginWithEmail event) async* {
     yield LoginStateLoading();
     try {
-      final user = await _userRepository.loginUser(event.body);
-      if(user != null){
-        _authenticationBloc.add(UserLoggedIn(user: user));
+      // final user = await _userRepository.loginUser(event.body);
+      final response = await _userRepository.loginUser(event.body);
+      if(response != null){
+        _authenticationBloc.add(UserLoggedIn(user: response));
         yield LoginStateSuccess();
         // yield LoginStateInitial();
       } else {

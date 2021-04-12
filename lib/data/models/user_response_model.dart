@@ -18,7 +18,7 @@ class UserResponseModel {
 
   factory UserResponseModel.fromJSON(Map<String, dynamic> json) {
     return UserResponseModel(
-      user: json['user'],
+      user: UserModel.fromJSON(json['user']),
       success: json['success'],
       message: json['message'],
       accessToken: json['accessToken'],

@@ -53,7 +53,7 @@ class ExploreTags extends StatelessWidget {
       onTap: onTagTapped,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 2.0),
-        child: Text(itemTitle, style: kCourseDescTextStyle,),
+        child: Text(itemTitle, style: kExploreTagsTextStyle,),
       ),
     );
   }

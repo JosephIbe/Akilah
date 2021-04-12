@@ -39,6 +39,7 @@ dependencies:
   dio: ^3.0.10
   pedantic: any
   flutter_paystack: ^1.0.4+1
+  flutter_secure_storage: ^4.1.0
 
 dev_dependencies:
   flutter_test:

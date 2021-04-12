@@ -223,6 +223,14 @@ var kWatchCourseAuthorTextStyle = GoogleFonts.poppins(
   )
 );
 
+var kExploreTagsTextStyle = GoogleFonts.poppins(
+    textStyle: TextStyle(
+      fontSize: 15.0,
+      fontWeight: FontWeight.w500,
+      color: Colors.blueGrey,
+    )
+);
+
 /**
  *  Text Input Decors
  * **/

@@ -7,10 +7,8 @@ class APIConstants {
   static const String AUTH_SEGMENT = '/api/v1/auth';
   static const String USER_SEGMENT = '/api/v1/user';
 
-  static const REGISTER_URL = LOCAL_BASE_URL + AUTH_SEGMENT + '/register';
-  static const LOGIN_URL = LOCAL_BASE_URL + AUTH_SEGMENT + '/login';
-
-  static const CURRENT_USER_URL = LOCAL_BASE_URL + USER_SEGMENT + '/current-user';
-  // static const CURRENT_USER_URL = PROD_BASE_URL + USER_SEGMENT + '/current-user';
+  static const ACCESS_TOKEN_KEY = 'access_token';
+  static const REFRESH_TOKEN_KEY = 'refresh_token';
+  static const USER_ID_KEY = 'userId';
 
 }

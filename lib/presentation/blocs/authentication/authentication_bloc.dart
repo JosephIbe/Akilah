@@ -23,12 +23,13 @@ class AuthenticationBloc
     if(event is UserSignedUp){
       yield* _mapUserSignedUpToState(event);
     }
-    
+
     if(event is UserLoggedIn){
       yield* _mapUserLoggedInToState(event);
     }
 
     if(event is UserLoggedOut){
+      await _repository.deleteTokens(event.accessToken, event.refreshToken);
       yield* _mapUserLoggedOutToState(event);
     }
 
@@ -37,13 +38,18 @@ class AuthenticationBloc
   Stream<AuthenticationState> _mapAppStartedToState(AppStarted event) async* {
     yield AuthenticationStateLoading();
     try{
+      final hasTokens = await _repository.checkHasTokens(event.accessToken, event.refreshToken);
+      print('hasTokens $hasTokens');
       final currentUser = await _repository.getCurrentUser();
-      if(currentUser != null){
+      print('currentUser is\t $currentUser');
+      // if(hasTokens && currentUser != null){
+      if(hasTokens){
         yield AuthenticationStateAuthenticated(user: currentUser, );
       } else {
         yield AuthenticationStateUnAuthenticated();
       }
     }catch(err){
+      print(err);
       // yield AuthenticationStateFailure(errorMessage: err.message ?? 'Error Completing Your Request, Try Again!');
       yield AuthenticationStateFailure(errorMessage: 'Error Completing Your Request, Try Again!');
     }

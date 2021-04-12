@@ -29,7 +29,7 @@ class _VerifyOTPState extends State<VerifyOTP> {
             child: Column(
               children: [
                 TopBanner(
-                  height: MediaQuery.of(context).size.height * 0.19,
+                  height: MediaQuery.of(context).size.height * 0.18,
                   title: enter6DigitCode,
                   hasBackButton: true,
                   onBackPressed: ()=> Navigator.pop(context),
@@ -59,9 +59,12 @@ class _VerifyOTPState extends State<VerifyOTP> {
                         ),
                         SizedBox(height: 25.0,),
                         GestureDetector(
-                          onTap: ()=> Navigator.pushReplacementNamed(context, homeRoute),
+                          // onTap: ()=> Navigator.popAndPushNamed(context, homeRoute),
+                          onTap: ()=> Navigator.pushNamedAndRemoveUntil(
+                            context, homeRoute, (Route<dynamic> route) => false
+                          ),
                           child: Text(
-                            'Skip To Home Page',
+                            'Proceed',
                             style: kVerificationCodePromptTextStyle,
                           ),
                         ),

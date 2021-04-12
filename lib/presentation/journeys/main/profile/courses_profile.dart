@@ -1,7 +1,9 @@
-import 'package:akilah/presentation/widgets/popular_courses_card.dart';
+import 'package:akilah/presentation/widgets/sample_course_card.dart';
 import 'package:akilah/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'course_in_category.dart';
 
 double width, height;
 
@@ -78,33 +80,27 @@ class _CoursesProfileState extends State<CoursesProfile>
               ListView(
                 shrinkWrap: true,
                 children: [
-                  PopularCourses(),
-                  PopularCourses(),
-                  PopularCourses(),
-                  PopularCourses(),
+                  CourseInCategory(),
+                  CourseInCategory(),
+                  CourseInCategory(),
                 ],
               ),
               DummyWidget(),
               ListView(
                 shrinkWrap: true,
                 children: [
-                  PopularCourses(),
-                  PopularCourses(),
-                  PopularCourses(),
-                  PopularCourses(),
+                  CourseInCategory(),
+                  CourseInCategory(),
+                  CourseInCategory(),
                 ],
               ),
               DummyWidget(),
               ListView(
                 shrinkWrap: true,
                 children: [
-                  PopularCourses(),
-                  PopularCourses(),
-                  PopularCourses(),
-                  PopularCourses(),
+                  CourseInCategory(),
                 ],
               ),
-              // DummyWidget(),
             ],
           ),
         )

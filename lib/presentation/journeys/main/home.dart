@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:akilah/presentation/journeys/main/home_main.dart';
 import 'package:akilah/presentation/journeys/main/explore/explore.dart';
 import 'file:///E:/FlutterProjects/akilah/lib/presentation/journeys/main/learn/learn.dart';
-import 'package:akilah/presentation/journeys/main/favorites.dart';
+import 'file:///E:/FlutterProjects/akilah/lib/presentation/journeys/main/favorites/favorites.dart';
 import 'file:///E:/FlutterProjects/akilah/lib/presentation/journeys/main/settings/settings.dart';
 
 class Home extends StatefulWidget {

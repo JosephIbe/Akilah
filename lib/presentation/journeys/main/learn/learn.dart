@@ -24,7 +24,7 @@ class Learn extends StatelessWidget {
           child: Column(
             children: [
               LearnBanner(),
-              _coursesList.length <= 0 || _coursesList.isEmpty ? EmptyMyCoursesPage() : OnGoingCourses()
+              _coursesList.isEmpty ? EmptyMyCoursesPage() : OnGoingCourses()
             ],
           ),
         ),
@@ -39,8 +39,8 @@ class LearnBanner extends StatelessWidget {
     return SafeArea(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-          height: MediaQuery.of(context).size.height * 0.16,
-          width: MediaQuery.of(context).size.width,
+          height: height * 0.17,
+          width: width,
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   stops: [0, 0.5, 0.75],

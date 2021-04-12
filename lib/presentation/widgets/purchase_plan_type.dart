@@ -30,32 +30,35 @@ class PurchasePlanCard extends StatelessWidget {
     return Container(
       width: width,
       height: height * 0.35,
-      margin: EdgeInsets.fromLTRB(10.0, 4.0, 10.0, 2.0),
+      margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 2.0),
       padding: EdgeInsets.all(8.0),
       child: Card(
         elevation: 4.0,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 14.0),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 10.0,),
               Text(planType, style: kPurchasePlanTypeTextStyle,),
-              SizedBox(height: 15.0,),
+              SizedBox(height: 10.0,),
               Text(planDescription, style: kPurchasePlanDescriptionTextStyle,),
-              SizedBox(height: 15.0,),
+              SizedBox(height: 10.0,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text('\$$planPrice', style: kPurchasePlanPriceTextStyle,),
+                  // Text('\$$planPrice', style: kPurchasePlanPriceTextStyle,),
+                  // Text('\u{20A6} $planPrice', style: kPurchasePlanPriceTextStyle,),
+                  Text('₦ $planPrice', style: kPurchasePlanPriceTextStyle,),
                   Text('/ ', style: kPurchasePlanPriceTextStyle,),
                   Text(planDuration, style: kPurchasePlanPriceTextStyle,),
                 ],
               ),
-              SizedBox(height: 15.0,),
+              SizedBox(height: 10.0,),
               ButtonTheme(
                 minWidth: width,
-                height: 50.0,
+                height: height * 0.07,
                 child: RaisedButton(
                   onPressed: onPlanSelected,
                   elevation: 2.0,

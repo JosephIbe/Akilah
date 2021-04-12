@@ -4,13 +4,19 @@ import 'package:akilah/utils/strings.dart';
 
 class HomeBanner extends StatelessWidget {
 
+  double height, width;
+
   @override
   Widget build(BuildContext context) {
+
+    height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width;
+
     return SafeArea(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-          height: MediaQuery.of(context).size.height * 0.17,
-          width: MediaQuery.of(context).size.width,
+          height: height * 0.17,
+          width: width,
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   stops: [0, 0.5, 0.75],
@@ -21,7 +27,7 @@ class HomeBanner extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 45.0,),
+              SizedBox(height: height * 0.06,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

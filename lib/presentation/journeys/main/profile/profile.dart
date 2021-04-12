@@ -9,6 +9,10 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
+
+    height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width;
+
     return SafeArea(
       child: Scaffold(
         body: Stack(
@@ -16,9 +20,9 @@ class _ProfileState extends State<Profile> {
             Column(
               children: [
                 Container(
-                  height: 140.0,
+                  height: height * 0.17,
                   padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-                  width: MediaQuery.of(context).size.width,
+                  width: width,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
                           stops: [0, 0.5, 0.75],

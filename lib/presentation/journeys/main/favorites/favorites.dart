@@ -24,8 +24,8 @@ class Favorites extends StatelessWidget {
           height: height,
           child: Column(
             children: [
-              TopBanner(height: height * 0.16, title: 'Favorites', hasBackButton: false, onBackPressed: (){},),
-              _favoritesList.length <= 0 || _favoritesList.isEmpty ? EmptyFavorites() : Container()
+              TopBanner(height: height * 0.17, title: 'Favorites', hasBackButton: false, onBackPressed: (){},),
+              _favoritesList.isEmpty ? EmptyFavorites() : Container()
             ],
           ),
         ),

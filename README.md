@@ -1,16 +1,24 @@
 # akilah
 
-A learning app UI built with flutter
+A learning app prototype built with flutter
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Akilah is an e-learning app prototype designed and built with Flutter.
+Current features include but not limited to
 
-A few resources to get you started if this is your first Flutter project:
+1. Authentication - Login, log out, sign up and auto-login
+2. View courses (mock data)
+3. Mock Payment Integration
+4. VIdeo player from network url
+5. Profile Screen
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Pending featurs
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Use actual data for courses
+2. Search for courses
+3. Tags
+4. Favorite course
+5. Accept live payment (outside sandbox environment), among others
+
+### Screenshots
